@@ -5,7 +5,9 @@ export const Loading = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            scrollbarWidth: "none"
+            scrollbarWidth: "none",
+            width: "100%",
+            backgroundColor:"#F5F5DC"
         }}>
             <img src={"/Rolling.gif"} alt="loading" />
         </div>

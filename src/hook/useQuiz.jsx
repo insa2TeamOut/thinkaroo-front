@@ -20,8 +20,9 @@ export const useQuiz = () => {
     const [gptAnswerApi, setGptAnswerApi] = useState(false);
 
     const client = axios.create({
-        // baseURL: "http://연결 ip:8000",
-        baseURL: "http://127.0.0.1:8000",
+        baseURL: "http://192.168.0.122:8000",
+        // baseURL: "http://127.0.0.1:8000",
+        // baseURL: "http://0.0.0.0:8000",
         timeout: 60000000000000000
     })
 
@@ -59,6 +60,7 @@ export const useQuiz = () => {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("text", gptQuiz);
+        formData.append("difficulty", userInput.level);
 
         try {
             const response = await client.post("/check_answer.openai.azure.com/", formData, {

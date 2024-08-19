@@ -87,7 +87,7 @@ export const WriteAnswer = ({checkingAnswer}) => {
 
             checkingAnswer(imageDataUrl)
 
-        }else console.log("none")
+        } else console.log("none")
     };
 
     return (
@@ -100,5 +100,6 @@ export const WriteAnswer = ({checkingAnswer}) => {
                 handleCheckAnswer={handleCheckAnswer}
             />
         </div>
-    );
+    )
+        ;
 }
