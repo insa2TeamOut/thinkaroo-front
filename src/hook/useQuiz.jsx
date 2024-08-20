@@ -14,8 +14,8 @@ export const useQuiz = () => {
 
     const [gptAnswer, setGptAnswer] = useState({
         choice_answer_result: "",
-        editing_result:"",
-        filename:""
+        editing_result: "",
+        filename: ""
     });
     const [gptAnswerApi, setGptAnswerApi] = useState(false);
 
@@ -56,6 +56,11 @@ export const useQuiz = () => {
 
     const checkingAnswer = async (file) => {
         setGptAnswerApi(true);
+        setGptAnswer({
+            choice_answer_result: "",
+            editing_result: "",
+            filename: ""
+        });
 
         const formData = new FormData();
         formData.append("file", file);
@@ -74,8 +79,8 @@ export const useQuiz = () => {
             // console.log(error.response.data);
             setGptAnswer({
                 choice_answer_result: "다시 채점버튼을 눌러주세요.",
-                editing_result:"X",
-                filename:""
+                editing_result: "X",
+                filename: ""
             });
         }
 
